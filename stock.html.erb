@@ -1,0 +1,99 @@
+<%
+require_relative 'stock'
+%>
+<!doctype html>
+<html>
+<head>
+<script src="./web/leader-line.min.js"></script>
+<script>var lines = {};</script>
+</head>
+<style>
+html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80) %>px;}
+.year:nth-child(odd) { fill: white; }
+.year:nth-child(even) { fill: #ddd; }
+.year-label {
+    text-align: center;
+    width: 100px;
+    position: absolute;
+    top: 0;
+}
+.stock {
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+    height: 50px;
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    opacity: 0.9;
+}
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.icons img {
+    max-width: 16px;
+    max-height: 16px;
+    vertical-align: middle;
+}
+</style>
+<body>
+<svg width="<%= (END_YEAR-START_YEAR) * 100 %>">
+<% (START_YEAR..END_YEAR).to_a.each_with_index do |year, i| %>
+<rect class="year" width="100" height="100%" x="<%= i * 100 %>" />
+<% end %>
+</svg>
+<% (START_YEAR..END_YEAR).to_a.each_with_index do |year, i| %>
+<div class="year-label" style="left: <%= i * 100 %>px;"><%= year %></div>
+<% end %>
+
+<% STOCK.each do |stock| %>
+<a
+    href="https://en.wikipedia.org/wiki/<%=stock.wiki%>"
+    class="stock"
+    style="left: <%= (stock.built.begin - START_YEAR)*100 + 5%>px; top: <%= 20 + 60*stock.y %>px; width:<%= (stock.built.end - stock.built.begin + 1) * 100 - 10 %>px;"
+    data-name="<%= stock.name %>"
+>
+    <div class="stock-label"><%= stock.name %></div>
+    <div class="icons">
+        <% stock.operators.each do |op, years| %>
+            <img src="./web/icons/<%= op.to_s %>.png" />
+        <% end %>
+    </div>
+</div>
+</a>
+<% unless stock.based_on.empty? %>
+<script>
+<% stock.based_on.each do |other, opts| %>
+lines["<%=stock.name %>_<%=other%>"] = new LeaderLine(
+    <% if opts[:start_x] || opts[:start_y] %> 
+        LeaderLine.pointAnchor( document.querySelector('[data-name="<%= other %>"]'), {
+            x: <%= (opts[:start_x] || "50%").inspect %>,
+            y: <%= (opts[:start_y] || "100%").inspect %>
+        }),
+    <% else %>
+        document.querySelector('[data-name="<%= other %>"]'),
+    <% end %>
+    <% if opts[:end_x] %> 
+        LeaderLine.pointAnchor( document.querySelector('[data-name="<%= stock.name %>"]'), {
+            x: <%= opts[:end_x] %>,
+            y: "0%"
+        }),
+    <% else %>
+        document.querySelector('[data-name="<%=stock.name%>"]'), 
+    <% end %>
+    {
+        color: "black",
+        <% if opts[:start_socket] %> startSocket: "<%=opts[:start_socket].to_s%>", <% end %>
+        <% if opts[:end_socket] %> endSocket: "<%=opts[:end_socket].to_s%>", <% end %>
+        <% if opts[:start_socket_gravity] %> startSocketGravity: <%=opts[:start_socket_gravity ].to_s%>, <% end %>
+    }
+)
+<% end %>
+</script>
+<% end %>
+<% end %>
+</body>
+</html>
