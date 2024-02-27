@@ -1161,6 +1161,7 @@ stock 312 do
     operator :c2c, 2000..2003
     make :york
     based_on 310
+    yo 1
 end
 
 stock 313 do
@@ -1189,6 +1190,49 @@ stock 507 do
     yo 1
 end
 
+stock 508 do
+    built 1979..1980
+    traction :third_rail
+    operator :br, 1978..1982
+    operator :rr, 1982..1996
+    operator :connex_se, 1998..2003
+    operator :set, 2003..2006
+    operator :se, 2006..2008
+    operator :silverlink, 2003..2013
+    operator :merseyrail, 1996..2024
+    based_on 507, end_socket: :left, start_x: 50, start_socket: :bottom
+end
+
+stock "D78 Stock" do
+    built 1978..1981
+    traction :third_rail
+    operator :lu, 1980..2017
+    make :birmingham
+    wiki "London Underground D78 Stock"
+    based_on "1973 Stock", end_socket: :top, end_x: 50
+    yo 1
+end
+
+stock 314 do
+    built 1979
+    traction :ole25kv
+    operator :br, 1979..1982
+    operator :rr, 1982..1996
+    operator :nx_scotrail, 1996..2004
+    operator :first_scotrail, 2004..2015
+    operator :scotrail, 2015..2019
+    make :york
+    based_on 313
+end
+
+stock 370 do
+    built 1977..1980
+    traction :ole25kv
+    operator :br, 1980..1982
+    operator :ic, 1982..1986
+    make :derby
+end
+
 # reserved
 
 stock 413 do
@@ -1211,3 +1255,21 @@ stock 483 do
     y 2
 end
 
+stock 230 do
+    built 2015..2022
+    traction :diesel, :battery
+    operator :wmt, 2019..2022
+    operator :tfw, (2023..)
+    # operator :gwr, soon
+    make :vivarail
+    based_on "D78 Stock"
+    yo 1
+end
+
+stock 484 do
+    built 2020..2021
+    traction :third_rail
+    operator :swr, (2021..)
+    make :vivarail
+    based_on "D78 Stock"
+end

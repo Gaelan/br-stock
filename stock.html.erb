@@ -38,6 +38,10 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
     max-height: 16px;
     vertical-align: middle;
 }
+.small-icons img {
+    max-width: 14px;
+    max-height: 14px;
+}
 </style>
 <body>
 <svg width="<%= (END_YEAR-START_YEAR) * 100 %>">
@@ -57,7 +61,7 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
     data-name="<%= stock.name %>"
 >
     <div class="stock-label"><%= stock.name %></div>
-    <div class="icons">
+    <div class="icons <%if stock.operators.size > 4 && stock.built.begin == stock.built.end%>small-icons<%end%>">
         <% stock.operators.each do |op, years| %>
             <img src="./web/icons/<%= op.to_s %>.png" />
         <% end %>
