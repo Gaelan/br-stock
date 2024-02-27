@@ -37,6 +37,7 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .icons img {
     max-width: 16px;
@@ -45,11 +46,9 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
     display: inline-block;
     justify-content: center;
     margin: 2px;
-    min-width: 5px;
-}
-.small-icons img {
-    max-width: 14px;
-    max-height: 14px;
+    min-width: 8px;
+    flex-basis: 8px;
+    flex-grow: 1;
 }
 </style>
 <body>
@@ -70,7 +69,7 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
     data-name="<%= stock.name %>"
 >
     <div class="stock-label"><%= stock.name %></div>
-    <div class="icons <%if stock.operators.size > 4 && stock.built.begin == stock.built.end%>small-icons<%end%>">
+    <div class="icons">
         <% stock.operators.each do |op, years| %>
             <img src="./web/icons/<%= op.to_s %>.png" />
         <% end %>

@@ -1330,6 +1330,7 @@ stock 141 do
     operator :rr, 1984..1996
     make :derby, :leyland
     based_on 140
+    yo 1
 end
 
 stock 150 do
@@ -1358,6 +1359,7 @@ stock 150 do
     operator :tfw, (2018..)
     make :york
     based_on 455, end_socket: :left
+    yo 1
 end
 
 stock 142 do
@@ -1540,6 +1542,53 @@ stock "Mark 4" do
     operator :lner, (2018..)
     operator :tfw, (2021..)
 end
+
+stock 165 do
+    built 1990..1992
+    traction :diesel
+    make :york
+
+    operator :nse, 1991..1996
+    operator :thames, 1996..2004
+    operator :first_gwl, 2004..2006
+    operator :first_gw, 2006..2015
+    operator :gwr, (2015..)
+    operator :chiltern, (1996..)
+
+    y 1
+end
+
+stock 320 do
+    built 1990
+    traction :ole25kv
+    make :york
+    based_on 321, end_socket: :left, start_x: 145, start_socket: :bottom
+
+    operator :rr, 1990..1996
+    operator :nx_scotrail, 1996..2004
+    operator :first_scotrail, 2004..2015
+    operator :scotrail, (2015..) 
+end
+
+stock 322 do
+    built 1990
+    traction :ole25kv
+    make :york
+    based_on 321, end_socket: :left, start_x: 145
+
+    operator :nse, 1990..1997
+    operator :first_nw, 1998..1999
+    operator :wagn, 1997..2001
+    operator :nx_scotrail, 2001..2004
+    operator :nxea, 2004..2005
+    operator :first_scotrail, 2005..2011
+    operator :serco_abellio_northern, 2011..2016
+    operator :northern, 2016..2020
+    operator :ga, 2020..2022
+
+    yo 1
+end
+
 
 # reserved
 
