@@ -31,10 +31,19 @@ html,body,svg { margin: 0; padding: 0; height: 2600px;}
     font-family: sans-serif;
     box-sizing: border-box;
 }
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .icons img {
     max-width: 16px;
     max-height: 16px;
     vertical-align: middle;
+    display: inline-block;
+    justify-content: center;
+    margin: 2px;
+    min-width: 5px;
 }
 .small-icons img {
     max-width: 14px;
@@ -3173,17 +3182,25 @@ lines["206_416/2"] = new LeaderLine(
         
             <img src="./web/icons/ic.png" />
         
+            <img src="./web/icons/valley_lines.png" />
+        
             <img src="./web/icons/virgin_xc.png" />
         
             <img src="./web/icons/virgin_wc.png" />
         
+            <img src="./web/icons/nx_wales.png" />
+        
             <img src="./web/icons/anglia.png" />
+        
+            <img src="./web/icons/arriva_northern.png" />
         
             <img src="./web/icons/wessex.png" />
         
             <img src="./web/icons/nxea.png" />
         
-            <img src="./web/icons/arriva_northern.png" />
+            <img src="./web/icons/arriva_wales.png" />
+        
+            <img src="./web/icons/nx_scotrail.png" />
         
             <img src="./web/icons/first_gw.png" />
         
@@ -3642,7 +3659,7 @@ lines["C77 Stock_C69 Stock"] = new LeaderLine(
 <a
     href="https://en.wikipedia.org/wiki/British Rail Class 445 & 446"
     class="stock"
-    style="left: 4805px; top: 320px; width:90px;"
+    style="left: 4805px; top: 1100px; width:90px;"
     data-name="445 & 446"
 >
     <div class="stock-label">445 & 446</div>
@@ -3753,13 +3770,19 @@ lines["1973 Stock_C69 Stock"] = new LeaderLine(
         
             <img src="./web/icons/ic.png" />
         
+            <img src="./web/icons/nx_scotrail.png" />
+        
             <img src="./web/icons/nxea.png" />
         
             <img src="./web/icons/virgin_wc.png" />
         
             <img src="./web/icons/first_gw.png" />
         
+            <img src="./web/icons/first_scotrail.png" />
+        
             <img src="./web/icons/arriva_wales.png" />
+        
+            <img src="./web/icons/caledonian_sleeper.png" />
         
             <img src="./web/icons/ga.png" />
         
@@ -3777,7 +3800,7 @@ lines["1973 Stock_C69 Stock"] = new LeaderLine(
 <a
     href="https://en.wikipedia.org/wiki/British Rail Class HST"
     class="stock"
-    style="left: 5205px; top: 740px; width:790px;"
+    style="left: 5205px; top: 980px; width:790px;"
     data-name="HST"
 >
     <div class="stock-label">HST</div>
@@ -3826,16 +3849,22 @@ lines["1973 Stock_C69 Stock"] = new LeaderLine(
 <script>
 
 lines["HST_Mark 3A"] = new LeaderLine(
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="Mark 3A"]'), {
+            x: 45,
+            y: "100%"
+        }),
     
-        document.querySelector('[data-name="Mark 3A"]'),
-    
-    
-        document.querySelector('[data-name="HST"]'), 
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="HST"]'), {
+            x: 45,
+            y: "0%"
+        }),
     
     {
         color: "black",
-        
-        
+         startSocket: "bottom", 
+         endSocket: "top", 
         
     }
 )
@@ -3846,7 +3875,7 @@ lines["HST_Mark 3A"] = new LeaderLine(
 <a
     href="https://en.wikipedia.org/wiki/British Rail Class 312"
     class="stock"
-    style="left: 5205px; top: 500px; width:390px;"
+    style="left: 5205px; top: 440px; width:390px;"
     data-name="312"
 >
     <div class="stock-label">312</div>
@@ -3893,7 +3922,7 @@ lines["312_310"] = new LeaderLine(
 <a
     href="https://en.wikipedia.org/wiki/British Rail Class 313"
     class="stock"
-    style="left: 5305px; top: 320px; width:190px;"
+    style="left: 5305px; top: 1100px; width:190px;"
     data-name="313"
 >
     <div class="stock-label">313</div>
@@ -3942,7 +3971,7 @@ lines["313_445 & 446"] = new LeaderLine(
 <a
     href="https://en.wikipedia.org/wiki/British Rail Class 507"
     class="stock"
-    style="left: 5505px; top: 380px; width:290px;"
+    style="left: 5505px; top: 1220px; width:290px;"
     data-name="507"
 >
     <div class="stock-label">507</div>
@@ -3981,7 +4010,7 @@ lines["507_313"] = new LeaderLine(
 <a
     href="https://en.wikipedia.org/wiki/British Rail Class 508"
     class="stock"
-    style="left: 5605px; top: 440px; width:190px;"
+    style="left: 5605px; top: 1280px; width:190px;"
     data-name="508"
 >
     <div class="stock-label">508</div>
@@ -4069,7 +4098,7 @@ lines["D78 Stock_1973 Stock"] = new LeaderLine(
 <a
     href="https://en.wikipedia.org/wiki/British Rail Class 314"
     class="stock"
-    style="left: 5605px; top: 320px; width:90px;"
+    style="left: 5605px; top: 1160px; width:90px;"
     data-name="314"
 >
     <div class="stock-label">314</div>
@@ -4128,6 +4157,205 @@ lines["314_313"] = new LeaderLine(
 
 
 <a
+    href="https://en.wikipedia.org/wiki/British Rail Class 140"
+    class="stock"
+    style="left: 5605px; top: 1040px; width:290px;"
+    data-name="140"
+>
+    <div class="stock-label">140</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/br.png" />
+        
+            <img src="./web/icons/rr.png" />
+        
+    </div>
+</div>
+</a>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 315"
+    class="stock"
+    style="left: 5705px; top: 1100px; width:190px;"
+    data-name="315"
+>
+    <div class="stock-label">315</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/br.png" />
+        
+            <img src="./web/icons/nse.png" />
+        
+            <img src="./web/icons/first_ge.png" />
+        
+            <img src="./web/icons/wagn.png" />
+        
+            <img src="./web/icons/nxea.png" />
+        
+            <img src="./web/icons/ga.png" />
+        
+            <img src="./web/icons/lo.png" />
+        
+            <img src="./web/icons/tfl_rail.png" />
+        
+            <img src="./web/icons/el.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["315_313"] = new LeaderLine(
+    
+        document.querySelector('[data-name="313"]'),
+    
+    
+        document.querySelector('[data-name="315"]'), 
+    
+    {
+        color: "black",
+        
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 1983 Stock"
+    class="stock"
+    style="left: 5705px; top: 320px; width:890px;"
+    data-name="1983 Stock"
+>
+    <div class="stock-label">1983 Stock</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/lu.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["1983 Stock_D78 Stock"] = new LeaderLine(
+    
+        document.querySelector('[data-name="D78 Stock"]'),
+    
+    
+        document.querySelector('[data-name="1983 Stock"]'), 
+    
+    {
+        color: "black",
+        
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 317"
+    class="stock"
+    style="left: 5805px; top: 800px; width:690px;"
+    data-name="317"
+>
+    <div class="stock-label">317</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/nse.png" />
+        
+            <img src="./web/icons/lts.png" />
+        
+            <img src="./web/icons/c2c.png" />
+        
+            <img src="./web/icons/wagn.png" />
+        
+            <img src="./web/icons/govia_tl.png" />
+        
+            <img src="./web/icons/nxea.png" />
+        
+            <img src="./web/icons/fcc.png" />
+        
+            <img src="./web/icons/ga.png" />
+        
+            <img src="./web/icons/lo.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["317_Mark 3A"] = new LeaderLine(
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="Mark 3A"]'), {
+            x: 645,
+            y: "100%"
+        }),
+    
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="317"]'), {
+            x: 45,
+            y: "0%"
+        }),
+    
+    {
+        color: "black",
+         startSocket: "bottom", 
+         endSocket: "top", 
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 210"
+    class="stock"
+    style="left: 5705px; top: 740px; width:90px;"
+    data-name="210"
+>
+    <div class="stock-label">210</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/nse.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["210_Mark 3A"] = new LeaderLine(
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="Mark 3A"]'), {
+            x: 450,
+            y: "100%"
+        }),
+    
+    
+        document.querySelector('[data-name="210"]'), 
+    
+    {
+        color: "black",
+         startSocket: "bottom", 
+        
+        
+    }
+)
+
+</script>
+
+
+<a
     href="https://en.wikipedia.org/wiki/British Rail Class 413"
     class="stock"
     style="left: 5905px; top: 560px; width:90px;"
@@ -4150,6 +4378,724 @@ lines["413_414/2"] = new LeaderLine(
     
     
         document.querySelector('[data-name="413"]'), 
+    
+    {
+        color: "black",
+        
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 455"
+    class="stock"
+    style="left: 5905px; top: 920px; width:390px;"
+    data-name="455"
+>
+    <div class="stock-label">455</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/nse.png" />
+        
+            <img src="./web/icons/connex_sc.png" />
+        
+            <img src="./web/icons/swt.png" />
+        
+            <img src="./web/icons/southern.png" />
+        
+            <img src="./web/icons/swr.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["455_317"] = new LeaderLine(
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="317"]'), {
+            x: 45,
+            y: "100%"
+        }),
+    
+    
+        document.querySelector('[data-name="455"]'), 
+    
+    {
+        color: "black",
+         startSocket: "bottom", 
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 141"
+    class="stock"
+    style="left: 6105px; top: 1040px; width:90px;"
+    data-name="141"
+>
+    <div class="stock-label">141</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/rr.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["141_140"] = new LeaderLine(
+    
+        document.querySelector('[data-name="140"]'),
+    
+    
+        document.querySelector('[data-name="141"]'), 
+    
+    {
+        color: "black",
+        
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 150"
+    class="stock"
+    style="left: 6105px; top: 980px; width:390px;"
+    data-name="150"
+>
+    <div class="stock-label">150</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/rr.png" />
+        
+            <img src="./web/icons/nx_wales.png" />
+        
+            <img src="./web/icons/first_nw.png" />
+        
+            <img src="./web/icons/arriva_northern.png" />
+        
+            <img src="./web/icons/anglia.png" />
+        
+            <img src="./web/icons/nx_scotrail.png" />
+        
+            <img src="./web/icons/first_scotrail.png" />
+        
+            <img src="./web/icons/nxea.png" />
+        
+            <img src="./web/icons/wessex.png" />
+        
+            <img src="./web/icons/central.png" />
+        
+            <img src="./web/icons/silverlink.png" />
+        
+            <img src="./web/icons/lo.png" />
+        
+            <img src="./web/icons/first_gw.png" />
+        
+            <img src="./web/icons/serco_abellio_northern.png" />
+        
+            <img src="./web/icons/london_midland.png" />
+        
+            <img src="./web/icons/arriva_wales.png" />
+        
+            <img src="./web/icons/wmr.png" />
+        
+            <img src="./web/icons/gwr.png" />
+        
+            <img src="./web/icons/northern.png" />
+        
+            <img src="./web/icons/lnwr.png" />
+        
+            <img src="./web/icons/tfw.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["150_455"] = new LeaderLine(
+    
+        document.querySelector('[data-name="455"]'),
+    
+    
+        document.querySelector('[data-name="150"]'), 
+    
+    {
+        color: "black",
+        
+         endSocket: "left", 
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 142"
+    class="stock"
+    style="left: 6205px; top: 1100px; width:290px;"
+    data-name="142"
+>
+    <div class="stock-label">142</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/rr.png" />
+        
+            <img src="./web/icons/valley_lines.png" />
+        
+            <img src="./web/icons/nx_wales.png" />
+        
+            <img src="./web/icons/first_nw.png" />
+        
+            <img src="./web/icons/arriva_northern.png" />
+        
+            <img src="./web/icons/first_gw.png" />
+        
+            <img src="./web/icons/serco_abellio_northern.png" />
+        
+            <img src="./web/icons/arriva_wales.png" />
+        
+            <img src="./web/icons/northern.png" />
+        
+            <img src="./web/icons/tfw.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["142_141"] = new LeaderLine(
+    
+        document.querySelector('[data-name="141"]'),
+    
+    
+        document.querySelector('[data-name="142"]'), 
+    
+    {
+        color: "black",
+         startSocket: "bottom", 
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 143"
+    class="stock"
+    style="left: 6205px; top: 1220px; width:190px;"
+    data-name="143"
+>
+    <div class="stock-label">143</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/rr.png" />
+        
+            <img src="./web/icons/nx_wales.png" />
+        
+            <img src="./web/icons/wessex.png" />
+        
+            <img src="./web/icons/first_gw.png" />
+        
+            <img src="./web/icons/arriva_wales.png" />
+        
+            <img src="./web/icons/gwr.png" />
+        
+            <img src="./web/icons/tfw.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["143_141"] = new LeaderLine(
+    
+        document.querySelector('[data-name="141"]'),
+    
+    
+        document.querySelector('[data-name="143"]'), 
+    
+    {
+        color: "black",
+        
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 151"
+    class="stock"
+    style="left: 6205px; top: 620px; width:90px;"
+    data-name="151"
+>
+    <div class="stock-label">151</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/rr.png" />
+        
+    </div>
+</div>
+</a>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 318"
+    class="stock"
+    style="left: 6205px; top: 860px; width:190px;"
+    data-name="318"
+>
+    <div class="stock-label">318</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/rr.png" />
+        
+            <img src="./web/icons/nx_scotrail.png" />
+        
+            <img src="./web/icons/first_scotrail.png" />
+        
+            <img src="./web/icons/scotrail.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["318_317"] = new LeaderLine(
+    
+        document.querySelector('[data-name="317"]'),
+    
+    
+        document.querySelector('[data-name="318"]'), 
+    
+    {
+        color: "black",
+        
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 144"
+    class="stock"
+    style="left: 6305px; top: 1280px; width:190px;"
+    data-name="144"
+>
+    <div class="stock-label">144</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/rr.png" />
+        
+            <img src="./web/icons/arriva_northern.png" />
+        
+            <img src="./web/icons/serco_abellio_northern.png" />
+        
+            <img src="./web/icons/northern.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["144_143"] = new LeaderLine(
+    
+        document.querySelector('[data-name="143"]'),
+    
+    
+        document.querySelector('[data-name="144"]'), 
+    
+    {
+        color: "black",
+        
+         endSocket: "left", 
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 155"
+    class="stock"
+    style="left: 6405px; top: 1160px; width:190px;"
+    data-name="155"
+>
+    <div class="stock-label">155</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/rr.png" />
+        
+            <img src="./web/icons/arriva_northern.png" />
+        
+            <img src="./web/icons/serco_abellio_northern.png" />
+        
+            <img src="./web/icons/northern.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["155_142"] = new LeaderLine(
+    
+        document.querySelector('[data-name="142"]'),
+    
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="155"]'), {
+            x: 140,
+            y: "0%"
+        }),
+    
+    {
+        color: "black",
+        
+         endSocket: "top", 
+        
+    }
+)
+
+lines["155_150"] = new LeaderLine(
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="150"]'), {
+            x: 2,
+            y: 48
+        }),
+    
+    
+        document.querySelector('[data-name="155"]'), 
+    
+    {
+        color: "black",
+         startSocket: "left", 
+        
+         startSocketGravity: [-200, 200], 
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 156"
+    class="stock"
+    style="left: 6405px; top: 1040px; width:290px;"
+    data-name="156"
+>
+    <div class="stock-label">156</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/rr.png" />
+        
+            <img src="./web/icons/arriva_northern.png" />
+        
+            <img src="./web/icons/nx_scotrail.png" />
+        
+            <img src="./web/icons/first_nw.png" />
+        
+            <img src="./web/icons/central.png" />
+        
+            <img src="./web/icons/nxea.png" />
+        
+            <img src="./web/icons/first_scotrail.png" />
+        
+            <img src="./web/icons/serco_abellio_northern.png" />
+        
+            <img src="./web/icons/stagecoach_em.png" />
+        
+            <img src="./web/icons/ga.png" />
+        
+            <img src="./web/icons/emr.png" />
+        
+            <img src="./web/icons/scotrail.png" />
+        
+            <img src="./web/icons/northern.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["156_150"] = new LeaderLine(
+    
+        document.querySelector('[data-name="150"]'),
+    
+    
+        document.querySelector('[data-name="156"]'), 
+    
+    {
+        color: "black",
+        
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 319"
+    class="stock"
+    style="left: 6405px; top: 740px; width:390px;"
+    data-name="319"
+>
+    <div class="stock-label">319</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/nse.png" />
+        
+            <img src="./web/icons/connex_sc.png" />
+        
+            <img src="./web/icons/govia_tl.png" />
+        
+            <img src="./web/icons/southern.png" />
+        
+            <img src="./web/icons/fcc.png" />
+        
+            <img src="./web/icons/tl.png" />
+        
+            <img src="./web/icons/london_midland.png" />
+        
+            <img src="./web/icons/serco_abellio_northern.png" />
+        
+            <img src="./web/icons/lnwr.png" />
+        
+            <img src="./web/icons/northern.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["319_Mark 3A"] = new LeaderLine(
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="Mark 3A"]'), {
+            x: 1050,
+            y: "100%"
+        }),
+    
+    
+        document.querySelector('[data-name="319"]'), 
+    
+    {
+        color: "black",
+         startSocket: "bottom", 
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 321"
+    class="stock"
+    style="left: 6505px; top: 860px; width:390px;"
+    data-name="321"
+>
+    <div class="stock-label">321</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/nse.png" />
+        
+            <img src="./web/icons/rr.png" />
+        
+            <img src="./web/icons/arriva_northern.png" />
+        
+            <img src="./web/icons/first_ge.png" />
+        
+            <img src="./web/icons/silverlink.png" />
+        
+            <img src="./web/icons/central.png" />
+        
+            <img src="./web/icons/fcc.png" />
+        
+            <img src="./web/icons/london_midland.png" />
+        
+            <img src="./web/icons/serco_abellio_northern.png" />
+        
+            <img src="./web/icons/gn.png" />
+        
+            <img src="./web/icons/lo.png" />
+        
+            <img src="./web/icons/northern.png" />
+        
+            <img src="./web/icons/nxea.png" />
+        
+            <img src="./web/icons/ga.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["321_319"] = new LeaderLine(
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="319"]'), {
+            x: 145,
+            y: "100%"
+        }),
+    
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="321"]'), {
+            x: 45,
+            y: "0%"
+        }),
+    
+    {
+        color: "black",
+        
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 158"
+    class="stock"
+    style="left: 6605px; top: 980px; width:390px;"
+    data-name="158"
+>
+    <div class="stock-label">158</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/rr.png" />
+        
+            <img src="./web/icons/nx_wales.png" />
+        
+            <img src="./web/icons/virgin_xc.png" />
+        
+            <img src="./web/icons/nx_scotrail.png" />
+        
+            <img src="./web/icons/arriva_northern.png" />
+        
+            <img src="./web/icons/first_nw.png" />
+        
+            <img src="./web/icons/wessex.png" />
+        
+            <img src="./web/icons/first_tpe.png" />
+        
+            <img src="./web/icons/central.png" />
+        
+            <img src="./web/icons/first_scotrail.png" />
+        
+            <img src="./web/icons/first_gw.png" />
+        
+            <img src="./web/icons/serco_abellio_northern.png" />
+        
+            <img src="./web/icons/swt.png" />
+        
+            <img src="./web/icons/arriva_wales.png" />
+        
+            <img src="./web/icons/stagecoach_em.png" />
+        
+            <img src="./web/icons/gwr.png" />
+        
+            <img src="./web/icons/scotrail.png" />
+        
+            <img src="./web/icons/northern.png" />
+        
+            <img src="./web/icons/swr.png" />
+        
+            <img src="./web/icons/tfw.png" />
+        
+            <img src="./web/icons/emr.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["158_150"] = new LeaderLine(
+    
+        document.querySelector('[data-name="150"]'),
+    
+    
+        document.querySelector('[data-name="158"]'), 
+    
+    {
+        color: "black",
+        
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class Mark 4"
+    class="stock"
+    style="left: 6605px; top: 20px; width:390px;"
+    data-name="Mark 4"
+>
+    <div class="stock-label">Mark 4</div>
+    <div class="icons ">
+        
+            <img src="./web/icons/ic.png" />
+        
+            <img src="./web/icons/gner.png" />
+        
+            <img src="./web/icons/ec.png" />
+        
+            <img src="./web/icons/virgin_ec.png" />
+        
+            <img src="./web/icons/lner.png" />
+        
+            <img src="./web/icons/tfw.png" />
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["Mark 4_370"] = new LeaderLine(
+    
+        document.querySelector('[data-name="370"]'),
+    
+    
+        document.querySelector('[data-name="Mark 4"]'), 
     
     {
         color: "black",
@@ -4212,7 +5158,7 @@ lines["483_1938 Stock"] = new LeaderLine(
     <div class="stock-label">230</div>
     <div class="icons ">
         
-            <img src="./web/icons/wmt.png" />
+            <img src="./web/icons/lnwr.png" />
         
             <img src="./web/icons/tfw.png" />
         

@@ -938,12 +938,16 @@ stock "Mark 2" do
     operator :nse, 1982..1996
     operator :rr, 1982..1996
     operator :ic, 1982..1996
+    operator :valley_lines, 1996..2001
     operator :virgin_xc, 1996..2002
     operator :virgin_wc, 1996..2003
+    operator :nx_wales, 2001..2003
     operator :anglia, 1996..2004
+    operator :arriva_northern, 2003..2004
     operator :wessex, 2002..2006
     operator :nxea, 2004..2006
-    operator :arriva_northern, 2003..2004
+    operator :arriva_wales, 2003..2018
+    operator :nx_scotrail, 1996..2008
     operator :first_gw, 1996..2010
     operator :first_scotrail, 2008..2015
     operator :serco_abellio_northern, 2004..2016
@@ -1083,7 +1087,7 @@ stock "445 & 446" do
     operator :br, 1971..1980
     make :york
 
-    y 5
+    y 18
 end
 
 stock "1972 Stock" do
@@ -1111,14 +1115,18 @@ stock "Mark 3A" do
     traction :hauled
     operator :br, 1975..1982
     operator :ic, 1982..1996
+    operator :nx_scotrail, 1996..2008
     operator :nxea, 2002..2012
     operator :virgin_wc, 1996..2014
     operator :first_gw, 1996..2015
+    operator :first_scotrail, 2008..2015
     operator :arriva_wales, 2012..2018
+    operator :caledonian_sleeper, 2015..2019
     operator :ga, 2014..2020
     operator :tfw, 2018..2020
     operator :gwr, (2015..)
     operator :chiltern, (2012..)
+
     make :derby
 
     y 11
@@ -1146,7 +1154,8 @@ stock "HST" do
     operator :gwr, (2015..)
     operator :scotrail, (2018..)
     make :derby
-    based_on "Mark 3A"
+    based_on "Mark 3A", start_x: 45, end_x: 45, start_socket: :bottom, end_socket: :top
+    yo 4
 end
 
 stock 312 do
@@ -1161,7 +1170,6 @@ stock 312 do
     operator :c2c, 2000..2003
     make :york
     based_on 310
-    yo 1
 end
 
 stock 313 do
@@ -1187,7 +1195,7 @@ stock 507 do
     operator :merseyrail, (1996..)
     make :york
     based_on 313
-    yo 1
+    yo 2
 end
 
 stock 508 do
@@ -1223,6 +1231,7 @@ stock 314 do
     operator :scotrail, 2015..2019
     make :york
     based_on 313
+    yo 1
 end
 
 stock 370 do
@@ -1233,7 +1242,63 @@ stock 370 do
     make :derby
 end
 
-# reserved
+stock 140 do
+    built 1979..1981
+    traction :diesel
+    operator :br, 1979..1982
+    operator :rr, 1982..1986
+    make :derby, :leyland
+    y 17
+end
+
+stock 315 do
+    built 1980..1981
+    traction :ole25kv
+    operator :br, 1980..1982
+    operator :nse, 1982..1996
+    operator :first_ge, 1996..2004
+    operator :wagn, 1996..2004
+    operator :nxea, 2004..2012
+    operator :ga, 2012..2015
+    operator :lo, 2015..2020
+    operator :tfl_rail, 2015..2022
+    operator :el, 2022..2022
+    make :york
+    based_on 313
+end
+
+stock "1983 Stock" do
+    built 1980..1988
+    traction :fourth_rail
+    operator :lu, 1984..1998
+    make :birmingham
+    based_on "D78 Stock"
+end
+
+stock 317 do
+    built 1981..1987
+    traction :ole25kv
+    operator :nse, 1983..1996
+    operator :lts, 1997..2000
+    operator :c2c, 2000..2002
+    operator :wagn, 1996..2004
+    operator :govia_tl, 1997..2006
+    operator :nxea, 2004..2012
+    operator :fcc, 2006..2014
+    operator :ga, 2012..2022
+    operator :lo, 2015..2020
+    based_on "Mark 3A", start_x: 645, end_x: 45, start_socket: :bottom, end_socket: :top
+    make :derby
+    yo 1
+end
+
+stock 210 do
+    built 1980
+    traction :diesel
+    operator :nse, 1982..1987
+    based_on "Mark 3A", start_x: 450, start_socket: :bottom
+    make :derby
+end
 
 stock 413 do
     built 1982
@@ -1242,6 +1307,241 @@ stock 413 do
     make :eastleigh
     based_on "414/2"
 end
+
+stock 455 do
+    built 1982..1985
+    traction :third_rail
+    operator :nse, 1982..1996
+    operator :connex_sc, 1996..2001
+    operator :swt, 1996..2017
+    operator :southern, 2001..2022
+    operator :swr, (2017..)
+    make :york
+    based_on 317, start_x: 45, start_socket: :bottom
+    yo 1
+end
+
+# exclude 488 as literally just Mk2s
+# exclude 489 as not passenger stock
+
+stock 141 do
+    built 1984
+    traction :diesel
+    operator :rr, 1984..1996
+    make :derby, :leyland
+    based_on 140
+end
+
+stock 150 do
+    built 1984..1987
+    traction :diesel
+    operator :rr, 1984..1996
+    operator :nx_wales, 1996..2003
+    operator :first_nw, 1996..2004
+    operator :arriva_northern, 1996..2004
+    operator :anglia, 1996..2004
+    operator :nx_scotrail, 1997..2004
+    operator :first_scotrail, 2004..2005
+    operator :nxea, 2004..2005
+    operator :wessex, 2001..2006
+    operator :central, 1996..2007
+    operator :silverlink, 1999..2007
+    operator :lo, 2007..2010
+    operator :first_gw, 2006..2015
+    operator :serco_abellio_northern, 2004..2016
+    operator :london_midland, 2007..2017
+    operator :arriva_wales, 2003..2018
+    operator :wmr, 2017..2020
+    operator :gwr, (2015..)
+    operator :northern, (2016..)
+    operator :lnwr, (2017..)
+    operator :tfw, (2018..)
+    make :york
+    based_on 455, end_socket: :left
+end
+
+stock 142 do
+    built 1985..1987
+    traction :diesel
+    operator :rr, 1985..1996
+    operator :valley_lines, 1998..2001
+    operator :nx_wales, 2001..2003
+    operator :first_nw, 1996..2004
+    operator :arriva_northern, 1997..2004
+    operator :first_gw, 2007..2011
+    operator :serco_abellio_northern, 2004..2016
+    operator :arriva_wales, 2003..2018
+    operator :northern, 2016..2020
+    operator :tfw, 2018..2020
+    make :derby, :leyland
+    based_on 141, start_socket: :bottom
+
+    yo 1
+end
+
+stock 143 do
+    built 1985..1986
+    traction :diesel
+    make :hunsley_barclay, :walter_alexander
+    based_on 141
+    operator :rr, 1985..1996
+    operator :nx_wales, 1996..2003
+    operator :wessex, 2001..2006
+    operator :first_gw, 1996..2015
+    operator :arriva_wales, 2003..2018
+    operator :gwr, 2015..2020
+    operator :tfw, 2018..2021
+
+    yo 3
+end
+
+stock 151 do
+    built 1985
+    traction :diesel
+    make :birmingham
+    operator :rr, 1985..1989
+
+    y 10
+end
+
+stock 318 do
+    built 1985..1986
+    traction :ole25kv
+    make :york
+    based_on 317
+    operator :rr, 1985..1996
+    operator :nx_scotrail, 1996..2008
+    operator :first_scotrail, 2008..2015
+    operator :scotrail, (2015..)
+end
+
+stock 144 do
+    built 1986..1987
+    traction :diesel
+    make :derby, :walter_alexander
+    based_on 143, end_socket: :left
+    operator :rr, 1986..1996
+    operator :arriva_northern, 1996..2004
+    operator :serco_abellio_northern, 2004..2016
+    operator :northern, 2016..2020
+end
+
+stock 155 do
+    built 1987..1988
+    traction :diesel
+    make :leyland
+    # pacer connection is somewhar tenous but it does
+    # seem like there was some influence
+    based_on 142, end_x: 140, end_socket: :top
+    based_on 150, start_socket: :left, start_y: 48, start_x: 2, start_socket_gravity: [-200, 200]
+    operator :rr, 1987..1996
+    operator :arriva_northern, 1996..2004
+    operator :serco_abellio_northern, 2004..2016
+    operator :northern, (2016..)
+end
+
+stock 156 do
+    built 1987..1989
+    traction :diesel
+    make :birmingham
+    based_on 150
+    operator :rr, 1987..1996
+    operator :arriva_northern, 1996..2004
+    operator :nx_scotrail, 1996..2004
+    operator :first_nw, 1996..2004
+    operator :central, 1997..2007
+    operator :nxea, 2005..2012
+    operator :first_scotrail, 2004..2015
+    operator :serco_abellio_northern, 2004..2016
+    operator :stagecoach_em, 2007..2019
+    operator :ga, 2012..2020
+    operator :emr, 2019..2023
+    operator :scotrail, (2015..)
+    operator :northern, (2016..)
+end
+
+stock 319 do
+    built 1987..1990
+    traction :ole25kv, :third_rail
+    make :york
+    based_on "Mark 3A", start_socket: :bottom, start_x: 1050
+    operator :nse, 1987..1996
+    operator :connex_sc, 1996..2001
+    operator :govia_tl, 1997..2006
+    operator :southern, 2001..2008
+    operator :fcc, 2006..2014
+    operator :tl, 2014..2017
+    operator :london_midland, 2015..2017
+    operator :serco_abellio_northern, 2015..2016
+    operator :lnwr, 2017..2023
+    operator :northern, 2016..2024
+end
+
+stock 321 do
+    built 1988..1991
+    traction :ole25kv
+    make :york
+    based_on 319, end_x: 45, start_x: 145
+    operator :nse, 1988..1996
+    operator :rr, 1991..1996
+    operator :arriva_northern, 1996..2004
+    operator :first_ge, 1996..2004
+    operator :silverlink, 1996..2007
+    operator :central, 2004..2007
+    operator :fcc, 2010..2014
+    operator :london_midland, 2007..2015
+    operator :serco_abellio_northern, 2004..2016
+    operator :gn, 2014..2016
+    operator :lo, 2015..2016
+    operator :northern, 2016..2020
+    operator :nxea, 2004..2012
+    operator :ga, 2012..2023
+    yo 1
+end
+
+stock 158 do
+    built 1989..1992
+    traction :diesel
+    make :derby
+    based_on 150
+    operator :rr, 1990..1996
+    operator :nx_wales, 1996..2003
+    operator :virgin_xc, 1996..2003
+    operator :nx_scotrail, 1996..2004
+    operator :arriva_northern, 1996..2004
+    operator :first_nw, 1996..2004
+    operator :wessex, 2001.2006
+    operator :first_tpe, 2004..2006
+    operator :central, 1996..2007
+    operator :first_scotrail, 2004..2015
+    operator :first_gw, 2006..2015
+    operator :serco_abellio_northern, 2004..2016
+    operator :swt, 1994..2017
+    operator :arriva_wales, 2003..2018
+    operator :stagecoach_em, 2007..2019
+    operator :gwr, (2015..)
+    operator :scotrail, (2015..)
+    operator :northern, (2016..)
+    operator :swr, (2017..)
+    operator :tfw, (2018..)
+    operator :emr, (2019..)
+end
+
+stock "Mark 4" do
+    built 1989..1992
+    traction :hauled
+    make :birmingham
+    based_on 370
+
+    operator :ic, 1982..1996
+    operator :gner, 1996..2007
+    operator :ec, 2009..2015
+    operator :virgin_ec, 2015..2018
+    operator :lner, (2018..)
+    operator :tfw, (2021..)
+end
+
+# reserved
 
 stock 483 do
     built 1989..1992
@@ -1258,7 +1558,7 @@ end
 stock 230 do
     built 2015..2022
     traction :diesel, :battery
-    operator :wmt, 2019..2022
+    operator :lnwr, 2019..2022
     operator :tfw, (2023..)
     # operator :gwr, soon
     make :vivarail

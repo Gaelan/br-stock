@@ -33,10 +33,19 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
     font-family: sans-serif;
     box-sizing: border-box;
 }
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .icons img {
     max-width: 16px;
     max-height: 16px;
     vertical-align: middle;
+    display: inline-block;
+    justify-content: center;
+    margin: 2px;
+    min-width: 5px;
 }
 .small-icons img {
     max-width: 14px;
