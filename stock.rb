@@ -944,6 +944,7 @@ stock "Mark 2" do
     operator :nx_wales, 2001..2003
     operator :anglia, 1996..2004
     operator :arriva_northern, 2003..2004
+    operator :gatwick_trains, 1996..2005
     operator :wessex, 2002..2006
     operator :nxea, 2004..2006
     operator :arriva_wales, 2003..2018
@@ -1240,6 +1241,7 @@ stock 370 do
     operator :br, 1980..1982
     operator :ic, 1982..1986
     make :derby
+    y 23
 end
 
 stock 140 do
@@ -1442,6 +1444,14 @@ stock 155 do
     operator :northern, (2016..)
 end
 
+stock "1986 Stock" do
+    built 1986..1987
+    traction :fourth_rail
+    make :derby, :birmingham
+    wiki "London Underground 1986 Stock"
+    operator :lu, 1988..1989
+end
+
 stock 156 do
     built 1987..1989
     traction :diesel
@@ -1543,6 +1553,18 @@ stock "Mark 4" do
     operator :tfw, (2021..)
 end
 
+stock 483 do
+    built 1989..1992
+    traction :third_rail
+    operator :nse, 1989..1996
+    operator :stagecoach_il, 1996..2017
+    operator :swt, 2007..2017
+    operator :swr, 2017..2021
+    make :eastleigh
+    based_on "1938 Stock", start_socket_gravity: 800
+    y 2
+end
+
 stock 165 do
     built 1990..1992
     traction :diesel
@@ -1555,7 +1577,7 @@ stock 165 do
     operator :gwr, (2015..)
     operator :chiltern, (1996..)
 
-    y 1
+    y 5
 end
 
 stock 320 do
@@ -1589,20 +1611,228 @@ stock 322 do
     yo 1
 end
 
+stock 153 do
+    built 1991..1992
+    traction :diesel
+    make :hunsley_barclay
+    based_on 155
 
-# reserved
+    operator :rr, 1990..1996
+    operator :nx_wales, 1996..2003
+    operator :anglia, 1996..2004
+    operator :arriva_northern, 1996..2004
+    operator :central, 1996..2007
+    operator :silverlink, 1996..2007
+    operator :wessex, 2001..2006
+    operator :nxea, 2004..2012
+    operator :first_gw, 2006..2015
+    operator :serco_abellio_northern, 2004..2016
+    operator :london_midland, 2007..2017
+    operator :arriva_wales, 2003..2018
+    operator :ga, 2012..2019
+    operator :stagecoach_em, 2007..2019
+    operator :wmr, 2017..2020
+    operator :emr, 2019..2021
+    operator :northern, 2021
+    operator :tfw, (2018..)
+    operator :scotrail, (2019..)
+end
 
-stock 483 do
-    built 1989..1992
+stock 465 do
+    built 1991..1994
     traction :third_rail
-    operator :nse, 1989..1996
-    operator :stagecoach_il, 1996..2017
-    operator :swt, 2007..2017
-    operator :swr, 2017..2021
-    make :eastleigh
-    based_on "1938 Stock", start_socket_gravity: 800
+    make :york, :birmingham
+    based_on 165, end_socket: :left, start_x: 45, start_socket: :bottom
+
+    operator :nse, 1991..1996
+    operator :connex_se, 1996..2003
+    operator :set, 2003..2006
+    operator :se, (2006..)
+    yo 1
+end
+
+stock "1992 Stock" do
+    built 1991..1994
+    traction :fourth_rail
+    make :derby
+    operator :lu, (1993..)
+    based_on "1986 Stock"
+    wiki "London Underground 1992 Stock"
+end
+
+stock 159 do
+    built 1992
+    traction :diesel
+    make :rosyth
+    based_on 158, start_socket: :bottom
+
+    operator :nse, 1993..1996
+    operator :swt, 1996..2017
+    operator :swr, (2017..)
+end
+
+stock 166 do
+    built 1992..1993
+    traction :diesel
+    make :york
+    based_on 165, end_socket: :left, start_x: 45, start_socket: :bottom
+
+    operator :nse, 1993..1996
+    operator :thames, 1996..2004
+    operator :first_gwl, 2004..2006
+    operator :first_gw, 2006..2015
+    operator :gwr, (2015..)
+end
+
+stock 323 do
+    built 1992..1995
+    traction :ole25kv
+    make :hunslet
+    # https://web.archive.org/web/20151123060152/http://www.porterbrook.co.uk:80/downloads/brochures/323%20Brochure.pdf
+    based_on 465, end_socket: :left, start_x: 45, start_socket: :bottom
+    operator :rr, 1994..1996
+    operator :central, 1996..2007
+    operator :first_nw, 1996..2004
+    operator :serco_abellio_northern, 2004..2016
+    operator :london_midland, 2007..2017
+    operator :wmr, 2017..2024 # TODO did this happen
+    operator :northern, (2016..)
+
+    yo 2
+end
+
+stock 373 do
+    built 1992..1996
+    traction :ole25kv, :third_rail
+    make :birmingham, :alstom_fr, :bruges
+
+    operator :es, (1994..)
+    y 3
+end
+
+stock 482 do
+    built 1992..1993
+    traction :fourth_rail
+    make :derby
+    based_on "1992 Stock", end_socket: :left, start_x: 45, start_socket: :bottom
+    
+    operator :nse, 1992..1994
+    operator :lu, (1994..)
+end
+
+stock 466 do
+    built 1993..1994
+    traction :third_rail
+    make :birmingham
+    based_on 465, end_socket: :left, start_x: 45, start_socket: :bottom
+
+    operator :nse, 1991..1996
+    operator :connex_se, 1996..2003
+    operator :set, 2003..2006
+    operator :se, (2006..)
+    yo 1
+end
+
+stock 365 do
+    built 1994..1995
+    traction :third_rail, :ole25kv
+    make :york
+    based_on 465, end_socket: :left, start_x: 45, start_socket: :bottom
+
+    operator :nse, 1996..1997
+    operator :connex_se, 1996..2003
+    operator :set, 2003..2004
+    operator :wagn, 1997..2006
+    operator :fcc, 2006..2014
+    operator :scotrail, 2018..2019
+    operator :gn, 2014..2021
+end
+
+stock 325 do
+    built 1995..1996
+    traction :ole25kv, :third_rail
+    make :derby
+    based_on 319
+
+    operator :res, 1995..1995
+    operator :gbrf, 2004..2010
+    operator :db, (1996..)
+end
+
+stock "1996 Stock" do
+    built 1996..2005
+    traction :third_rail
+    make :birmingham
+    wiki "London Underground 1996 Stock"
+
+    operator :lu, 1998..
+end
+
+stock "1995 Stock" do
+    built 1996..2000
+    traction :third_rail
+    make :birmingham
+    based_on "1996 Stock", end_socket: :left, start_socket: :left, start_x: 0, start_y: "75%"
+    wiki "London Underground 1995 Stock"
+    
+    operator :lu, 1998..
+end
+
+stock 332 do
+    built 1997..2001
+    traction :ole25kv
+    make :caf
+
+    operator :hx, 1998..2020
+
     y 2
 end
+
+stock "168/0" do
+    built 1998
+    traction :diesel
+    make :derby
+    based_on 165
+
+    operator :chiltern, (1996..)
+end
+
+stock 170 do
+    built 1998..2005
+    traction :diesel
+    make :derby
+    based_on "168/0", end_socket: :left, start_socket: :left, start_x: 0, start_y: "75%"
+
+    operator :mml, 1999..2004
+    operator :nx_scotrail, 1999..2004
+    operator :anglia, 1999..2004
+    operator :hull_trains, 2000..2005
+    operator :central, 1999..2007
+    operator :swt, 2000..2007
+    operator :southern, 2004..2010 #ish
+    operator :nxea, 2004..2012
+    operator :first_scotrail, 2004..2015
+    operator :first_tpe, 2006..2016
+    operator :london_midland, 2007..2017
+    operator :ga, 2012..2019
+    operator :wmr, 2017..2023
+    operator :xc, (2007..)
+    operator :scotrail, (2015..) 
+    operator :northern, (2018..)
+    operator :tfw, (2019..)
+    operator :emr, (2020..)
+end
+
+stock "168 (not /0)" do
+    built 2000..2004
+    traction :diesel
+    make :derby
+    based_on 170, end_socket: :left, start_x: 45, start_socket: :bottom
+
+    operator :chiltern, (2000..)
+end
+
+# reserved
 
 stock 230 do
     built 2015..2022
