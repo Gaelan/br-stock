@@ -19,7 +19,7 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
 }
 .stock {
     position: absolute;
-    background-color: white;
+    background-color: rgba(255,255,255,0.9);
     border-radius: 5px;
     border: 1px solid black;
     text-align: center;
@@ -27,7 +27,7 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
     color: inherit;
     text-decoration: none;
     display: block;
-    opacity: 0.9;
+    z-index: 1;
 }
 * {
     font-family: sans-serif;
