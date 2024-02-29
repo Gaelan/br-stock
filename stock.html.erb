@@ -79,12 +79,30 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
 .intro h1, .intro p {
     margin: 0;
 }
+
+.sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
 </style>
 <body>
 <div class="intro">
 <h1>A Visual History of Railway Rolling Stock in Great Britain</h1>
 <p>by <a href="https://gaelan.me">Gaelan Steele</a>, with help</p>
 <p><a href="about.html">more info</a></p>
+<p class="sr-only">
+Screen reader users: the rest of this page is, unfortunately, highly
+visual—it's a timeline of train classes, with arrows connecting related classes.
+I've tried to add screen-reader-only text so at least all the information's
+present, but I won't pretend it's anywhere near as useful as the visual form.
+If you have any thoughts on how to present this sort of thing in a more
+screen-reader-friendly way, do let me know.
+</p>
 </div>
 <div class="year-labels" style="width: <%= (END_YEAR-START_YEAR + 1) * 100 %>px;">
 <% (START_YEAR..END_YEAR).to_a.each_with_index do |year, i|
@@ -105,9 +123,15 @@ end %>
     data-name="<%= stock.name %>"
 >
     <div class="stock-label"><%= stock.name %></div>
+    <div class="sr-only">
+        Built <%= stock.built.begin %> to <%= stock.built.end %>.
+        <% unless stock.based_on.empty? %>
+            Based on <%= stock.based_on.map(&:first).join(", ") %>.
+        <% end %>
+    </div>
     <div class="icons">
         <% stock.operators.each do |op, years| %>
-            <img src="./web/icons/<%= op.to_s %>.png" title="<%= OPERATORS[op] %> (<%=years.begin%>-<%=years.end%>)" />
+            <img src="./web/icons/<%= op.to_s %>.png" title="<%= OPERATORS[op] %> (<%=years.begin%>-<%=years.end%>)" alt="<%= OPERATORS[op] %> (<%=years.begin%>-<%=years.end%>)"/>
         <% end %>
     </div>
 </div>
