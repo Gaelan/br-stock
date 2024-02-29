@@ -67,7 +67,7 @@ html,body,svg { margin: 0; padding: 0; height: 2480px;}
     position: absolute;
     left: 10px;
     top: 220px;
-    width: 570px;
+    width: 580px;
     background-color: rgba(255,255,255,0.9);
     border-radius: 5px;
     padding: 20px;
@@ -485,16 +485,19 @@ lines["N Stock_L Stock"] = new LeaderLine(
 <script>
 
 lines["1935 Stock_Standard Stock"] = new LeaderLine(
-    
-        document.querySelector('[data-name="Standard Stock"]'),
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="Standard Stock"]'), {
+            x: 1045,
+            y: "100%"
+        }),
     
     
         document.querySelector('[data-name="1935 Stock"]'), 
     
     {
         color: "black",
-        
-        
+         startSocket: "bottom", 
+         endSocket: "left", 
         
         
     }
@@ -605,16 +608,19 @@ lines["1938 Stock_1935 Stock"] = new LeaderLine(
 <script>
 
 lines["402_401"] = new LeaderLine(
-    
-        document.querySelector('[data-name="401"]'),
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="401"]'), {
+            x: 45,
+            y: "100%"
+        }),
     
     
         document.querySelector('[data-name="402"]'), 
     
     {
         color: "black",
-        
-        
+         startSocket: "bottom", 
+         endSocket: "left", 
         
         
     }
@@ -1512,16 +1518,19 @@ lines["111_101"] = new LeaderLine(
 <script>
 
 lines["116_114"] = new LeaderLine(
-    
-        document.querySelector('[data-name="114"]'),
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="114"]'), {
+            x: 45,
+            y: "100%"
+        }),
     
     
         document.querySelector('[data-name="116"]'), 
     
     {
         color: "black",
-        
-        
+         startSocket: "bottom", 
+         endSocket: "left", 
         
         
     }
@@ -3138,16 +3147,19 @@ lines["206_416/2"] = new LeaderLine(
 <script>
 
 lines["421_411"] = new LeaderLine(
-    
-        document.querySelector('[data-name="411"]'),
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="411"]'), {
+            x: 645,
+            y: "100%"
+        }),
     
     
         document.querySelector('[data-name="421"]'), 
     
     {
         color: "black",
-        
-        
+         startSocket: "bottom", 
+         endSocket: "left", 
         
         
     }
@@ -4168,16 +4180,19 @@ lines["315_313"] = new LeaderLine(
 <script>
 
 lines["1983 Stock_D78 Stock"] = new LeaderLine(
-    
-        document.querySelector('[data-name="D78 Stock"]'),
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="D78 Stock"]'), {
+            x: 45,
+            y: "100%"
+        }),
     
     
         document.querySelector('[data-name="1983 Stock"]'), 
     
     {
         color: "black",
-        
-        
+         startSocket: "bottom", 
+         endSocket: "left", 
         
         
     }
@@ -4660,15 +4675,18 @@ lines["318_317"] = new LeaderLine(
 <script>
 
 lines["144_143"] = new LeaderLine(
-    
-        document.querySelector('[data-name="143"]'),
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="143"]'), {
+            x: 45,
+            y: "100%"
+        }),
     
     
         document.querySelector('[data-name="144"]'), 
     
     {
         color: "black",
-        
+         startSocket: "bottom", 
          endSocket: "left", 
         
         
@@ -7434,7 +7452,7 @@ lines["385_395"] = new LeaderLine(
         
          endSocket: "top", 
         
-         endSocketGravity: 50, 
+         endSocketGravity: 200, 
     }
 )
 

@@ -237,7 +237,7 @@ stock "1935 Stock" do
     built 1935
     traction :fourth_rail
     operator :lu, 1936..1976
-    based_on "Standard Stock"
+    based_on "Standard Stock", end_socket: :left, start_x: 1045, start_socket: :bottom
     make :birmingham
     wiki "London Underground 1935 Stock"
     y 1
@@ -286,7 +286,7 @@ stock 402 do
     built 1938..1939
     traction :third_rail
     operator :br, 1939..1971
-    based_on 401
+    based_on 401, end_socket: :left, start_x: 45, start_socket: :bottom
     make :eastleigh, :lancing
     y 9
 end
@@ -605,7 +605,7 @@ stock 116 do
     operator :nse, 1982..1995 # approx
     operator :rr, 1982..1995 # approx
     make :derby
-    based_on 114
+    based_on 114, end_socket: :left, start_x: 45, start_socket: :bottom
 end
 
 stock 201 do
@@ -1068,7 +1068,7 @@ stock 421 do
     operator :set, 1996..2004
     operator :southern, 2000..2005
     operator :swt, 1996..2010
-    based_on 411
+    based_on 411, end_socket: :left, start_x: 645, start_socket: :bottom
     make :york
     yo 1
 end
@@ -1384,7 +1384,7 @@ stock "1983 Stock" do
     traction :fourth_rail
     operator :lu, 1984..1998
     make :birmingham
-    based_on "D78 Stock"
+    based_on "D78 Stock", end_socket: :left, start_x: 45, start_socket: :bottom
     wiki "London Underground 1983 Stock"
 end
 
@@ -1534,7 +1534,7 @@ stock 144 do
     built 1986..1987
     traction :diesel
     make :derby, :walter_alexander
-    based_on 143, end_socket: :left
+    based_on 143, end_socket: :left, start_x: 45, start_socket: :bottom
     operator :rr, 1986..1996
     operator :arriva_northern, 1996..2004
     operator :serco_abellio_northern, 2004..2016
@@ -2387,7 +2387,7 @@ stock 385 do
     traction :ole25kv
     make :hitachi
 
-    based_on 395, end_socket: :top, end_x: 45, end_socket_gravity: 50
+    based_on 395, end_socket: :top, end_x: 45, end_socket_gravity: 200
     operator :scotrail, (2018..)
     yo 5
 end
