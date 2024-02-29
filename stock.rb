@@ -72,6 +72,86 @@ class StockDSL
     end
 end
 
+OPERATORS = {
+    anglia: "Anglia Railways",
+    arriva_northern: "Arriva Trains Northern",
+    arriva_wales: "Arriva Trains Wales",
+    avanti: "Avanti West Coast",
+    br: "British Rail",
+    c2c: "c2c",
+    caledonian_sleeper: "Caledonian Sleeper",
+    central: "Central Trains",
+    chiltern: "Chiltern Railways",
+    connex_sc: "Connex South Central",
+    connex_se: "Connex South East",
+    db: "DB Cargo",
+    ec: "East Coast",
+    el: "Elizabeth Line",
+    emr: "East Midlands Railway",
+    es: "Eurostar",
+    fcc: "First Capital Connect",
+    first_ge: "First Great Eastern",
+    first_gw: "First Great Western",
+    first_gwl: "First Great Western Link",
+    first_nw: "First North Western",
+    first_scotrail: "First ScotRail",
+    first_tpe: "First TransPennine Express",
+    ga: "Greater Anglia",
+    gatwick_trains: "Gatwick Trains",
+    gbrf: "GB Railfreight",
+    gn: "Great Northern",
+    gner: "GNER",
+    govia_tl: "Thameslink",
+    grand_central: "Grand Central",
+    gwr: "Great Western Railway",
+    gx: "Gatwick Express",
+    heathrow_connect: "Heathrow Connect",
+    hull_trains: "Hull Trains",
+    hx: "Heathrow Express",
+    ic: "British Rail InterCity",
+    lner: "LNER",
+    lnwr: "London Northwestern Railway",
+    lo: "London Overground",
+    london_midland: "London Midland",
+    lts: "LTS Rail",
+    lu: "London Underground",
+    merseyrail: "Merseyrail",
+    mml: "Midland Mainline",
+    northern: "Northern",
+    nse: "Network Southeast",
+    nx_scotrail: "National Express ScotRail",
+    nx_wales: "Wales and West/Borders",
+    nxea: "National Express East Anglia",
+    nxec: "National Express East Coast",
+    res: "Rail Express Systems",
+    rr: "Regional Railways",
+    scotrail: "ScotRail",
+    se: "Southeastern",
+    serco_abellio_northern: "Serco/Abellio Northern Rail",
+    set: "South East Trains",
+    silverlink: "Silverlink",
+    southern: "Southern",
+    stagecoach_em: "Stagecoach East Midlands",
+    stagecoach_il: "Stagecoach Island Line",
+    supertram: "South Yorkshire Supertram",
+    swr: "South Western Railway",
+    swt: "Stagecoach South West Trains",
+    tfl_rail: "TfL Rail",
+    tfw: "Transport for Wales Rail",
+    thames: "Thames Trains",
+    tl: "Thameslink",
+    tpe: "TransPennine Express",
+    tyne_wear: "Tyne & Wear Metro",
+    valley_lines: "Valley Lines",
+    virgin_ec: "Virgin East Coast",
+    virgin_wc: "Virgin West Coast",
+    virgin_xc: "Virgin CrossCountry",
+    wagn: "West Anglia Great Northern",
+    wessex: "Wessex Trains",
+    wmr: "West Midlands Railway",
+    xc: "CrossCountry",
+}
+
 # makes:
 # birmingham_rcw: Birmingham Railway Carriage and Wagon Company
 # birmingham: Metro-Cammell and Alstom at former M-C works
@@ -887,7 +967,7 @@ stock 207 do
     operator :br, 1962..1982
     operator :nse, 1982..1996
     operator :connex_sc, 1996..2001
-    operator :southern, 2001.2004
+    operator :southern, 2001..2004
     make :eastleigh
     based_on 205, end_socket: :left, start_socket: :bottom
 end
@@ -1173,6 +1253,13 @@ stock 312 do
     based_on 310
 end
 
+stock "Metrocar" do
+    built 1975..1981
+    traction :ole1500
+    operator :tyne_wear, 1975..1981
+    make :birmingham
+end
+
 stock 313 do
     built 1976..1977
     traction :ole25kv, :third_rail
@@ -1276,6 +1363,7 @@ stock "1983 Stock" do
     make :birmingham
     based_on "D78 Stock"
 end
+
 
 stock 317 do
     built 1981..1987
@@ -1537,7 +1625,7 @@ stock 158 do
     operator :nx_scotrail, 1996..2004
     operator :arriva_northern, 1996..2004
     operator :first_nw, 1996..2004
-    operator :wessex, 2001.2006
+    operator :wessex, 2001..2006
     operator :first_tpe, 2004..2006
     operator :central, 1996..2007
     operator :first_scotrail, 2004..2015
@@ -1650,7 +1738,7 @@ stock 153 do
     operator :stagecoach_em, 2007..2019
     operator :wmr, 2017..2020
     operator :emr, 2019..2021
-    operator :northern, 2021
+    operator :northern, (2021..)
     operator :tfw, (2018..)
     operator :scotrail, (2019..)
 end
@@ -1775,7 +1863,7 @@ stock 325 do
     operator :gbrf, 2004..2010
     operator :db, (1996..)
 
-    yo 2
+    yo 3
 end
 
 stock "1996 Stock" do
@@ -1783,10 +1871,10 @@ stock "1996 Stock" do
     traction :third_rail
     make :birmingham
     wiki "London Underground 1996 Stock"
-    based_on 465, end_socket: :top, end_x: 45
+    based_on 465, end_socket: :top, end_x: 45, start_socket_gravity: 200
 
     operator :lu, (1998..)
-    yo 6
+    yo 7
 end
 
 stock "1995 Stock" do
@@ -1929,8 +2017,10 @@ stock 180 do
     make :birmingham
     based_on 175, end_socket: :left, start_x: 45, start_socket: :bottom
 
+    operator :serco_abellio_northern, 2008..2011
     operator :first_gw, 2001..2012
-    operator :hull_trains, 180..2020
+    operator :hull_trains, 2009..2020
+    operator :northern, 2016..2018
     operator :emr, 2020..2023
     operator :grand_central, (2020..)
 end
@@ -2058,6 +2148,7 @@ stock 350 do
 
     operator :central, 2005..2007
     operator :silverlink, 2005..2007
+    operator :souther, 2009..2009
     operator :first_tpe, 2013..2016
     operator :london_midland, 2007..2017
     operator :tpe, 2016..2020
@@ -2092,7 +2183,7 @@ stock 395 do
     
     operator :se, (2009..)
 
-    y 1
+    y 18
 end
 
 stock "2009 Stock" do
@@ -2102,7 +2193,7 @@ stock "2009 Stock" do
     
     operator :lu, (2009..)
 
-    y 14
+    y 19
 end
 
 stock 139 do
@@ -2110,7 +2201,8 @@ stock 139 do
     traction :diesel
     make :parry
 
-    operator :wmr, (2009..)
+    operator :london_midland, (2009..2017)
+    operator :wmr, (2017..)
 
     y 2
 end
@@ -2158,7 +2250,7 @@ stock 172 do
     traction :diesel
     make :derby
     based_on 170
-    based_on 220
+    based_on 220, start_socket_gravity: 420 # bogies
 
     operator :london_midland, 2011..2017
     operator :lo, 2010..2018
@@ -2175,7 +2267,136 @@ stock 374 do
 
     operator :es, (2015..)
 
-    y 1
+    y 7
+end
+
+stock 379 do
+    built 2010..2011
+    traction :ole25kv
+    make :derby
+    based_on 377
+
+    operator :nxea, 2011..2012
+    operator :ga, 2012..2022
+    yo 1
+end
+
+stock 387 do
+    built 2014..2017
+    traction :ole25kv, :third_rail
+    make :derby
+    based_on 379
+
+    operator :tl, 2014..2016
+    operator :c2c, 2016..2022
+    operator :gwr, (2016..)
+    operator :gx, (2016..)
+    operator :gn, (2016..)
+    operator :hx, (2020..)
+end
+
+stock 700 do
+    built 2014..2018
+    traction :ole25kv, :third_rail
+    make :siemens
+
+    based_on 380
+
+    operator :tl, (2016..)
+    operator :gn, (2017..)
+end
+
+stock 800 do
+    built 2014..2018
+    traction :ole25kv, :diesel
+    make :hitachi
+
+    based_on 395
+
+    operator :gwr, (2017..)
+    operator :lner, (2019..)
+end
+
+stock 801 do
+    built 2017..2020
+    traction :ole25kv
+    make :hitachi
+
+    based_on 800, end_socket: :left, start_x: 145, start_socket: :bottom
+
+    operator :lner, (2019..)
+end
+
+stock 399 do
+    built 2014..2015
+    traction :ole25kv, :ole750
+    make :valencia
+
+    operator :supertram, (2017..)
+
+    y 6
+end
+
+stock 345 do
+    built 2015..2019
+    traction :ole25kv
+    make :derby
+    based_on 379
+    based_on 220, start_socket_gravity: 200
+
+    operator :tfl_rail, 2017..2022
+    operator :el, (2022..)
+    yo -6
+end
+
+stock 385 do
+    built 2015..2020
+    traction :ole25kv
+    make :hitachi
+
+    based_on 395, end_socket: :top, end_x: 45, end_socket_gravity: 50
+    operator :scotrail, (2018..)
+    yo 2
+end
+
+stock 707 do
+    built 2015..2018
+    traction :third_rail
+    make :siemens
+    based_on 700, end_socket: :left, start_x: 45, start_socket: :bottom
+
+    operator :swt, 2017..2017
+    operator :swr, (2017..)
+    operator :se, (2021..)
+end
+
+stock "Mark 5" do
+    built 2016..2018
+    traction :hauled
+    make :caf
+    operator :caledonian_sleeper, (2019..)
+    wiki "British Rail Mark 5 (CAF)"
+    
+    y 2
+end
+
+stock 195 do
+    built 2017..2020
+    traction :diesel
+    make :caf
+    based_on "Mark 5"
+
+    operator :northern, (2019..)
+end
+
+stock 769 do
+    built 2017..2021
+    traction :diesel, :ole25kv, :third_rail
+    make :brush
+    based_on 319
+
+    operator :tfw, 2019..2023
+    operator :northern, (2021..)
 end
 
 # reserved

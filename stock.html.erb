@@ -72,7 +72,7 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
     <div class="stock-label"><%= stock.name %></div>
     <div class="icons">
         <% stock.operators.each do |op, years| %>
-            <img src="./web/icons/<%= op.to_s %>.png" />
+            <img src="./web/icons/<%= op.to_s %>.png" title="<%= OPERATORS[op] %> (<%=years.begin%>-<%=years.end%>)" />
         <% end %>
     </div>
 </div>
@@ -102,6 +102,7 @@ lines["<%=stock.name %>_<%=other%>"] = new LeaderLine(
         <% if opts[:start_socket] %> startSocket: "<%=opts[:start_socket].to_s%>", <% end %>
         <% if opts[:end_socket] %> endSocket: "<%=opts[:end_socket].to_s%>", <% end %>
         <% if opts[:start_socket_gravity] %> startSocketGravity: <%=opts[:start_socket_gravity ].to_s%>, <% end %>
+        <% if opts[:end_socket_gravity] %> endSocketGravity: <%=opts[:end_socket_gravity ].to_s%>, <% end %>
     }
 )
 <% end %>
