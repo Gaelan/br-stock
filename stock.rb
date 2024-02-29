@@ -2357,7 +2357,7 @@ stock 801 do
 
     operator :lner, (2019..)
 
-    yo 1
+    yo 2
 end
 
 stock 399 do
@@ -2387,9 +2387,9 @@ stock 385 do
     traction :ole25kv
     make :hitachi
 
-    based_on 395, end_socket: :top, end_x: 45, end_socket_gravity: 200
+    based_on 395, end_socket: :top, end_x: 45, end_socket_gravity: 300
     operator :scotrail, (2018..)
-    yo 5
+    yo 6
 end
 
 stock 707 do
@@ -2686,7 +2686,7 @@ stock "2024 Stock" do
     built 2022..2024 # present
     traction :fourth_rail
     make :siemens
-    wiki "London Underground 2004 Stock"
+    wiki "London Underground 2024 Stock"
 
     operator :lu, (2025..)
 end
