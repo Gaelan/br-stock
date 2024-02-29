@@ -2183,7 +2183,7 @@ stock 395 do
     
     operator :se, (2009..)
 
-    y 18
+    y 19
 end
 
 stock "2009 Stock" do
@@ -2193,7 +2193,7 @@ stock "2009 Stock" do
     
     operator :lu, (2009..)
 
-    y 19
+    yf 395
 end
 
 stock 139 do
@@ -2267,7 +2267,7 @@ stock 374 do
 
     operator :es, (2015..)
 
-    y 7
+    y 26
 end
 
 stock 379 do
@@ -2325,6 +2325,8 @@ stock 801 do
     based_on 800, end_socket: :left, start_x: 145, start_socket: :bottom
 
     operator :lner, (2019..)
+
+    yo 1
 end
 
 stock 399 do
@@ -2356,7 +2358,7 @@ stock 385 do
 
     based_on 395, end_socket: :top, end_x: 45, end_socket_gravity: 50
     operator :scotrail, (2018..)
-    yo 2
+    yo 3
 end
 
 stock 707 do
@@ -2368,6 +2370,19 @@ stock 707 do
     operator :swt, 2017..2017
     operator :swr, (2017..)
     operator :se, (2021..)
+
+    yo 1
+end
+
+stock 230 do
+    built 2015..2022
+    traction :diesel, :battery
+    operator :lnwr, 2019..2022
+    operator :tfw, (2023..)
+    # operator :gwr, soon
+    make :vivarail
+    based_on "D78 Stock"
+    yo 1
 end
 
 stock "Mark 5" do
@@ -2377,16 +2392,7 @@ stock "Mark 5" do
     operator :caledonian_sleeper, (2019..)
     wiki "British Rail Mark 5 (CAF)"
     
-    y 2
-end
-
-stock 195 do
-    built 2017..2020
-    traction :diesel
-    make :caf
-    based_on "Mark 5"
-
-    operator :northern, (2019..)
+    y 7
 end
 
 stock 769 do
@@ -2399,18 +2405,149 @@ stock 769 do
     operator :northern, (2021..)
 end
 
-# reserved
+stock 802 do
+    built 2017..2020
+    traction :diesel, :ole25kv
+    make :hitachi
+    based_on 800, end_socket: :left, start_x: 145, start_socket: :bottom
 
-stock 230 do
-    built 2015..2022
-    traction :diesel, :battery
-    operator :lnwr, 2019..2022
-    operator :tfw, (2023..)
-    # operator :gwr, soon
-    make :vivarail
-    based_on "D78 Stock"
+    operator :gwr, (2017..)
+    operator :tpe, (2019..)
+    operator :hull_trains, (2019..)
+end
+
+stock 331 do
+    built 2017..2020
+    traction :ole25kv
+    make :caf
+    based_on "Mark 5", end_socket: :left, start_x: 45, start_socket: :bottom
+
+    operator :northern, (2019..)
+
     yo 1
 end
+
+stock 195 do
+    built 2017..2020
+    traction :diesel
+    make :caf
+    based_on 331, end_socket: :left, start_socket: :left, start_x: 0, start_y: "75%"
+
+    operator :northern, (2019..)
+end
+
+stock 710 do
+    built 2017..2020
+    traction :third_rail, :ole25kv
+    make :derby
+    based_on 345, end_socket: :left, start_x: 45, start_socket: :bottom
+
+    operator :lo, (2019..)
+end
+
+stock 397 do
+    built 2017..2020
+    traction :ole25kv
+    make :caf
+    based_on 331, end_socket: :left, start_socket: :left, start_x: 0, start_y: "75%"
+
+    operator :tpe, (2019..)
+
+    yo 2
+end
+
+stock "Mark 5A" do
+    built 2017..2018
+    traction :hauled
+    make :caf
+    based_on "Mark 5", end_socket: :left, start_x: 45, start_socket: :bottom
+    wiki "British Rail Mark 5A"
+
+    operator :tpe, 2019..2023
+end
+
+stock 717 do
+    built 2018
+    traction :ole25kv, :third_rail
+    make :siemens
+    based_on 700, end_socket: :left, start_x: 45, start_socket: :bottom
+
+    operator :gn, (2018..)
+end
+
+stock 720 do
+    built 2018..2022
+    traction :ole25kv
+    make :derby
+    based_on 345, end_socket: :left, start_x: 45, start_socket: :bottom
+
+    operator :ga, (2020..)
+    operator :c2c, (2023..)
+
+    yo 1
+end
+
+stock 745 do
+    built 2018..2020
+    traction :ole25kv
+    make :stadler
+
+    operator :ga, (2020..)
+
+    yf 385
+end
+
+stock 755 do
+    built 2018..2020
+    traction :ole25kv, :diesel
+    make :stadler
+    based_on 745, end_socket: :left, start_socket: :left
+
+    operator :ga, 2019..
+end
+
+stock 777 do
+    built 2018..2023
+    traction :third_rail
+    make :stadler
+    based_on 745, end_socket: :left, start_socket: :left
+
+    operator :merseyrail, (2023..)
+
+    yo 1
+end
+
+stock 398 do
+    built 2020..2024 # present
+    traction :ole25kv
+    make :stadler
+    based_on 399
+
+    operator :tfw, (2024..)
+end
+
+stock 196 do
+    built 2019..2024 # present
+    traction :diesel
+    make :caf
+    based_on 195, start_x: 45, start_socket: :bottom
+
+    operator :wmr, (2022..)
+end
+
+stock 701 do
+    built 2019..2024 # present
+    traction :third_rail
+    make :derby
+    based_on 345, end_socket: :left, start_x: 45, start_socket: :bottom
+
+    operator :swr, (2024..)
+
+    yo 2
+end
+
+# reserved
+
 
 stock 484 do
     built 2020..2021

@@ -38,6 +38,7 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    min-head: 16px;
 }
 .icons img {
     max-width: 16px;
@@ -53,7 +54,7 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
 }
 </style>
 <body>
-<svg width="<%= (END_YEAR-START_YEAR) * 100 %>">
+<svg width="<%= (END_YEAR-START_YEAR + 1) * 100 %>">
 <% (START_YEAR..END_YEAR).to_a.each_with_index do |year, i| %>
 <rect class="year" width="100" height="100%" x="<%= i * 100 %>" />
 <% end %>
