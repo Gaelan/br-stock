@@ -2587,7 +2587,7 @@ stock 730 do
     based_on 701, end_socket: :left, start_x: 45, start_socket: :bottom
 
     operator :lnwr, (2023..)
-    # operator :wmr, soon
+    operator :wmr, (2024..)
 end
 
 # no 768, parcel conversion
