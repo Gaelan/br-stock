@@ -218,7 +218,7 @@ stock "N Stock" do
     built 1935
     traction :third_rail
     operator :lu, 1935..1971
-    wiki "London Underground M Stock"
+    wiki "London Underground N Stock"
     based_on "L Stock"# wiki says K, unclear
     make :birmingham
     y 3
@@ -359,6 +359,8 @@ stock "402 (steel)" do
     operator :br, 1948..1971
     make :eastleigh
     based_on 405
+
+    wiki "British Rail Class 402"
 end
 
 stock 306 do
@@ -374,6 +376,7 @@ stock "R Stock" do
     traction :fourth_rail
     operator :lu, 1949..1983
     make :birmingham_rcw, :gloucester
+    wiki "London Underground R Stock"
     based_on "Q38 Stock"
 end
 
@@ -398,6 +401,7 @@ stock "Mark 1" do
     operator :anglia, 1997..2000
     operator :nx_scotrail, 1997..2000
     make :br, :cravens, :gloucester
+    wiki "British Rail Mark 1"
 
     y 4
 end
@@ -411,6 +415,7 @@ stock "415/1" do
     operator :nse, 1982..1995
     make :eastleigh
     based_on 405, start_socket: :bottom, start_x: 950
+    wiki "British Rail Class 415"
 end
 
 stock "416/1" do
@@ -422,6 +427,8 @@ stock "416/1" do
     make :eastleigh, :ashford, :lancing
     # based_on 2NOL
     y 27
+
+    wiki "British Rail Class 416"
 end
 
 stock 307 do
@@ -443,6 +450,8 @@ stock "415/2" do
     operator :nse, 1982..1995
     make :eastleigh
     based_on "Mark 1", start_socket: :bottom, start_x: 850
+
+    wiki "British Rail Class 415"
 end
 
 stock "416/2" do
@@ -453,6 +462,8 @@ stock "416/2" do
     make :eastleigh
     based_on "Mark 1", start_x: 250, start_socket: :bottom
     yo 3
+
+    wiki "British Rail Class 416"
 end
 
 stock 129 do
@@ -534,6 +545,7 @@ stock "1956 Stock" do
     operator :lu, 1957..1995
     make :birmingham, :birmingham_rcw, :gloucester
     based_on "1938 Stock"
+    wiki "London Underground 1956 Stock"
     yo 2
 end
 
@@ -543,7 +555,7 @@ stock 103 do
     operator :br, 1957..1982
     operator :rr, 1982..1983
     make :park_royal
-    y 42
+    yf "415/1"
 end
 
 stock 104 do
@@ -564,6 +576,7 @@ stock "414/2" do
     operator :nse, 1982..1955
     based_on "416/2"
     make :eastleigh
+    wiki "British Rail Class 414"
 
     yo 1
 end
@@ -573,7 +586,7 @@ stock 109 do
     traction :diesel
     operator :br, 1957..1971
     make :d_wickham
-    y 41
+    y 33
 end
 
 stock 111 do
@@ -653,6 +666,7 @@ stock "414/1" do
     operator :nse, 1982..1995
     # based_on 2NOL
     make :eastleigh
+    wiki "British Rail Class 414"
     y 34
 end
 
@@ -682,7 +696,9 @@ stock 108 do
     operator :rr, 1982..1993
     # based_on derby lightweight
     make :derby
-    y 42
+
+    yf 105
+    yo 2
 end
 
 stock 125 do
@@ -797,7 +813,7 @@ stock "Blue Pullman" do
     operator :br, 1960..1973
     make :birmingham
     wiki "Blue Pullmans"
-    y 40
+    y 36
 end
 
 stock "1959 Stock" do
@@ -940,6 +956,7 @@ stock "1960 Stock" do
     operator :lu, 1960..1994
     make :cravens
     based_on "Standard Stock"
+    wiki "London Underground 1960 Stock"
     yo 1
 end
 
@@ -948,6 +965,7 @@ stock "A60 and A62 Stock" do
     traction :fourth_rail
     operator :lu, 1961..2012
     based_on "1938 Stock"
+    wiki "London Underground A60 and A62 Stock"
     yo 1
 end
 
@@ -1036,6 +1054,7 @@ stock "Mark 2" do
     operator :caledonian_sleeper, 2015..2019
     operator :scotrail, 2015..2020
     make :derby
+    wiki "British Rail Mark 2"
     y 6
 end
 
@@ -1168,6 +1187,8 @@ stock "445 & 446" do
     operator :br, 1971..1980
     make :york
 
+    wiki "British Rail Class 445"
+
     y 19
 end
 
@@ -1210,6 +1231,8 @@ stock "Mark 3A" do
 
     make :derby
 
+    wiki "British Rail Mark 3A"
+
     y 11
 end
 
@@ -1236,6 +1259,7 @@ stock "HST" do
     operator :scotrail, (2018..)
     make :derby
     based_on "Mark 3A", start_x: 45, end_x: 45, start_socket: :bottom, end_socket: :top
+    wiki "Inter-City 125"
     yo 5
 end
 
@@ -1257,6 +1281,7 @@ stock "Metrocar" do
     built 1975..1981
     traction :ole1500
     operator :tyne_wear, 1975..1981
+    wiki "Tyne & Wear Metrocar"
     make :birmingham
 end
 
@@ -1362,6 +1387,7 @@ stock "1983 Stock" do
     operator :lu, 1984..1998
     make :birmingham
     based_on "D78 Stock"
+    wiki "London Underground 1983 Stock"
 end
 
 
@@ -1655,6 +1681,8 @@ stock "Mark 4" do
     operator :lner, (2018..)
     operator :tfw, (2021..)
 
+    wiki "British Rail Mark 4"
+
     yo 1
 end
 
@@ -1903,6 +1931,8 @@ stock "168/0" do
     make :derby
     based_on 165
 
+    wiki "British Rail Class 168"
+
     operator :chiltern, (1996..)
 end
 
@@ -1937,6 +1967,7 @@ stock "168 (not /0)" do
     traction :diesel
     make :derby
     based_on 170, end_socket: :left, start_x: 45, start_socket: :bottom
+    wiki "British Rail Class 168"
 
     operator :chiltern, (2000..)
 
@@ -2190,6 +2221,7 @@ stock "2009 Stock" do
     built 2007..2011
     traction :fourth_rail
     make :derby
+    wiki "London Underground 2009 Stock"
     
     operator :lu, (2009..)
 
@@ -2222,6 +2254,7 @@ stock "S8 Stock" do
     traction :third_rail
     make :derby
     based_on "2009 Stock", end_socket: :left, start_x: 45, start_socket: :bottom
+    wiki "London Underground S8 Stock"
 
     operator :lu, (2009..)
 end
@@ -2231,6 +2264,7 @@ stock "S7 Stock" do
     traction :fourth_rail
     make :derby
     based_on "S8 Stock", end_socket: :left, start_x: 245, start_socket: :bottom
+    wiki "London Underground S7 Stock"
 
     operator :lu, (2012..)
 end
@@ -2655,6 +2689,7 @@ stock "2024 Stock" do
     built 2022..2024 # present
     traction :fourth_rail
     make :siemens
+    wiki "London Underground 2004 Stock"
 
     operator :lu, (2025..)
 end
