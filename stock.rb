@@ -1030,7 +1030,7 @@ stock 206 do
 end
 
 stock "Mark 2" do
-    built 1963..1975
+    built 1964..1975
     traction :hauled
     operator :br, 1964..1982
     operator :nse, 1982..1996
@@ -1082,7 +1082,7 @@ stock 310 do
     operator :c2c, 1996..2002
     operator :central, 1996..2002
     make :derby
-    based_on "Mark 2", start_socket: :bottom, start_x: 150
+    based_on "Mark 2", start_socket: :bottom, start_x: 45
 end
 
 # TODO: 131? meh
@@ -1109,7 +1109,7 @@ end
 
 stock 432 do
     # 4 REP: 438s with motors
-    built 1966..1967
+    built 1966..1974
     traction :third_rail
     operator :br, 1966..1982
     operator :nse, 1982..1992
