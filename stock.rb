@@ -716,7 +716,7 @@ stock 302 do
     traction :ole25kv
     operator :br, 1958..1982
     operator :nse, 1982..1996
-    operator :lts, 1996..1998
+    operator :c2c, 1996..1998
     based_on "Mark 1", end_socket: :left, start_x: 550
     make :york, :doncaster
     yo 7
@@ -1079,8 +1079,7 @@ stock 310 do
     operator :br, 1965..1982
     operator :nse, 1982..1996
     operator :rr, 1982..1996
-    operator :lts, 1996..2000
-    operator :c2c, 2000..2002
+    operator :c2c, 1996..2002
     operator :central, 1996..2002
     make :derby
     based_on "Mark 2", start_socket: :bottom, start_x: 150
@@ -1271,8 +1270,7 @@ stock 312 do
     operator :rr, 1982..1996
     operator :central, 1996..1996
     operator :first_ge, 1996..2004
-    operator :lts, 1996..2000
-    operator :c2c, 2000..2003
+    operator :c2c, 1996..2003
     make :york
     based_on 310
 end
@@ -1395,8 +1393,7 @@ stock 317 do
     built 1981..1987
     traction :ole25kv
     operator :nse, 1983..1996
-    operator :lts, 1997..2000
-    operator :c2c, 2000..2002
+    operator :c2c, 1997..2002
     operator :wagn, 1996..2004
     operator :govia_tl, 1997..2006
     operator :nxea, 2004..2012
@@ -2179,7 +2176,7 @@ stock 350 do
 
     operator :central, 2005..2007
     operator :silverlink, 2005..2007
-    operator :souther, 2009..2009
+    operator :southern, 2009..2009
     operator :first_tpe, 2013..2016
     operator :london_midland, 2007..2017
     operator :tpe, 2016..2020

@@ -15,6 +15,7 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
 .year-labels {
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 .year-label:nth-child(odd) {
     background-color: white;
@@ -63,8 +64,27 @@ html,body,svg { margin: 0; padding: 0; height: <%= (STOCK.map(&:y).max * 60 + 80
     flex-grow: 1;
     object-fit: contain;
 }
+
+.intro {
+    position: absolute;
+    left: 10px;
+    top: 220px;
+    width: 580px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.intro h1, .intro p {
+    margin: 0;
+}
 </style>
 <body>
+<div class="intro">
+<h1>A Visual History of Railway Rolling Stock in Great Britain</h1>
+<p>by <a href="https://gaelan.me">Gaelan Steele</a>, with help</p>
+<p><a href="about.html">more info</a></p>
+</div>
 <div class="year-labels" style="width: <%= (END_YEAR-START_YEAR + 1) * 100 %>px;">
 <% (START_YEAR..END_YEAR).to_a.each_with_index do |year, i|
     %><div class="year-label" style="left: <%= i * 100 %>px;"><%= year %></div><%
