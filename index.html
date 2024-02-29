@@ -5411,19 +5411,19 @@ lines["144_143"] = new LeaderLine(
 <script>
 
 lines["155_142"] = new LeaderLine(
-    
-        document.querySelector('[data-name="142"]'),
-    
      
-        LeaderLine.pointAnchor( document.querySelector('[data-name="155"]'), {
-            x: 140,
-            y: "0%"
+        LeaderLine.pointAnchor( document.querySelector('[data-name="142"]'), {
+            x: 45,
+            y: "100%"
         }),
+    
+    
+        document.querySelector('[data-name="155"]'), 
     
     {
         color: "black",
-        
-         endSocket: "top", 
+         startSocket: "bottom", 
+         endSocket: "left", 
         
         
     }
@@ -5572,16 +5572,19 @@ lines["442_Mark 3A"] = new LeaderLine(
 <script>
 
 lines["156_150"] = new LeaderLine(
-    
-        document.querySelector('[data-name="150"]'),
+     
+        LeaderLine.pointAnchor( document.querySelector('[data-name="150"]'), {
+            x: 145,
+            y: "100%"
+        }),
     
     
         document.querySelector('[data-name="156"]'), 
     
     {
         color: "black",
-        
-        
+         startSocket: "bottom", 
+         endSocket: "left", 
         
         
     }

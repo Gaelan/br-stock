@@ -1547,7 +1547,7 @@ stock 155 do
     make :leyland
     # pacer connection is somewhar tenous but it does
     # seem like there was some influence
-    based_on 142, end_x: 140, end_socket: :top
+    based_on 142, end_socket: :left, start_x: 45, start_socket: :bottom
     based_on 150, start_socket: :left, start_y: 48, start_x: 2, start_socket_gravity: [-200, 200]
     operator :rr, 1987..1996
     operator :arriva_northern, 1996..2004
@@ -1580,7 +1580,7 @@ stock 156 do
     built 1987..1989
     traction :diesel
     make :birmingham
-    based_on 150
+    based_on 150, end_socket: :left, start_x: 145, start_socket: :bottom
     operator :rr, 1987..1996
     operator :arriva_northern, 1996..2004
     operator :nx_scotrail, 1996..2004
