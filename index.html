@@ -4402,7 +4402,7 @@ lines["312_310"] = new LeaderLine(
 
 
 <a
-    href="https://en.wikipedia.org/wiki/Tyne & Wear Metrocar"
+    href="https://en.wikipedia.org/wiki/Tyne & Wear Metrocars"
     class="stock"
     style="left: 5205px; top: 20px; width:690px;"
     data-name="Metrocar"
@@ -4823,68 +4823,6 @@ lines["1983 Stock_D78 Stock"] = new LeaderLine(
 
 
 <a
-    href="https://en.wikipedia.org/wiki/British Rail Class 317"
-    class="stock"
-    style="left: 5805px; top: 860px; width:690px;"
-    data-name="317"
->
-    <div class="stock-label">317</div>
-    <div class="sr-only">
-        Built 1981 to 1987.
-        
-            Based on Mark 3A.
-        
-    </div>
-    <div class="icons">
-        
-            <img src="./web/icons/nse.png" title="Network Southeast (1983-1996)" alt="Network Southeast (1983-1996)"/>
-        
-            <img src="./web/icons/c2c.png" title="c2c (1997-2002)" alt="c2c (1997-2002)"/>
-        
-            <img src="./web/icons/wagn.png" title="West Anglia Great Northern (1996-2004)" alt="West Anglia Great Northern (1996-2004)"/>
-        
-            <img src="./web/icons/govia_tl.png" title="Thameslink (1997-2006)" alt="Thameslink (1997-2006)"/>
-        
-            <img src="./web/icons/nxea.png" title="National Express East Anglia (2004-2012)" alt="National Express East Anglia (2004-2012)"/>
-        
-            <img src="./web/icons/fcc.png" title="First Capital Connect (2006-2014)" alt="First Capital Connect (2006-2014)"/>
-        
-            <img src="./web/icons/ga.png" title="Greater Anglia (2012-2022)" alt="Greater Anglia (2012-2022)"/>
-        
-            <img src="./web/icons/lo.png" title="London Overground (2015-2020)" alt="London Overground (2015-2020)"/>
-        
-    </div>
-</div>
-</a>
-
-<script>
-
-lines["317_Mark 3A"] = new LeaderLine(
-     
-        LeaderLine.pointAnchor( document.querySelector('[data-name="Mark 3A"]'), {
-            x: 645,
-            y: "100%"
-        }),
-    
-     
-        LeaderLine.pointAnchor( document.querySelector('[data-name="317"]'), {
-            x: 45,
-            y: "0%"
-        }),
-    
-    {
-        color: "black",
-         startSocket: "bottom", 
-         endSocket: "top", 
-        
-        
-    }
-)
-
-</script>
-
-
-<a
     href="https://en.wikipedia.org/wiki/British Rail Class 210"
     class="stock"
     style="left: 5705px; top: 740px; width:90px;"
@@ -4920,6 +4858,62 @@ lines["210_Mark 3A"] = new LeaderLine(
     {
         color: "black",
          startSocket: "bottom", 
+        
+        
+        
+    }
+)
+
+</script>
+
+
+<a
+    href="https://en.wikipedia.org/wiki/British Rail Class 317"
+    class="stock"
+    style="left: 5805px; top: 860px; width:690px;"
+    data-name="317"
+>
+    <div class="stock-label">317</div>
+    <div class="sr-only">
+        Built 1981 to 1987.
+        
+            Based on 210.
+        
+    </div>
+    <div class="icons">
+        
+            <img src="./web/icons/nse.png" title="Network Southeast (1983-1996)" alt="Network Southeast (1983-1996)"/>
+        
+            <img src="./web/icons/c2c.png" title="c2c (1997-2002)" alt="c2c (1997-2002)"/>
+        
+            <img src="./web/icons/wagn.png" title="West Anglia Great Northern (1996-2004)" alt="West Anglia Great Northern (1996-2004)"/>
+        
+            <img src="./web/icons/govia_tl.png" title="Thameslink (1997-2006)" alt="Thameslink (1997-2006)"/>
+        
+            <img src="./web/icons/nxea.png" title="National Express East Anglia (2004-2012)" alt="National Express East Anglia (2004-2012)"/>
+        
+            <img src="./web/icons/fcc.png" title="First Capital Connect (2006-2014)" alt="First Capital Connect (2006-2014)"/>
+        
+            <img src="./web/icons/ga.png" title="Greater Anglia (2012-2022)" alt="Greater Anglia (2012-2022)"/>
+        
+            <img src="./web/icons/lo.png" title="London Overground (2015-2020)" alt="London Overground (2015-2020)"/>
+        
+    </div>
+</div>
+</a>
+
+<script>
+
+lines["317_210"] = new LeaderLine(
+    
+        document.querySelector('[data-name="210"]'),
+    
+    
+        document.querySelector('[data-name="317"]'), 
+    
+    {
+        color: "black",
+        
         
         
         

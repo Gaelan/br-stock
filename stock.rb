@@ -1279,7 +1279,7 @@ stock "Metrocar" do
     built 1975..1981
     traction :ole1500
     operator :tyne_wear, 1975..1981
-    wiki "Tyne & Wear Metrocar"
+    wiki "Tyne & Wear Metrocars"
     make :birmingham
 end
 
@@ -1388,6 +1388,13 @@ stock "1983 Stock" do
     wiki "London Underground 1983 Stock"
 end
 
+stock 210 do
+    built 1980
+    traction :diesel
+    operator :nse, 1982..1987
+    based_on "Mark 3A", start_x: 450, start_socket: :bottom
+    make :derby
+end
 
 stock 317 do
     built 1981..1987
@@ -1400,17 +1407,10 @@ stock 317 do
     operator :fcc, 2006..2014
     operator :ga, 2012..2022
     operator :lo, 2015..2020
-    based_on "Mark 3A", start_x: 645, end_x: 45, start_socket: :bottom, end_socket: :top
+    #based_on "Mark 3A", start_x: 645, end_x: 45, start_socket: :bottom, end_socket: :top
+    based_on 210
     make :derby
     yo 2
-end
-
-stock 210 do
-    built 1980
-    traction :diesel
-    operator :nse, 1982..1987
-    based_on "Mark 3A", start_x: 450, start_socket: :bottom
-    make :derby
 end
 
 stock 413 do
